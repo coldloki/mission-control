@@ -7,6 +7,9 @@ type TaskStatus = "todo" | "in_progress" | "done" | "blocked";
 type TaskPriority = "low" | "high" | "critical";
 type TaskRunStatus = "ok" | "error" | "skipped";
 
+type SortKey = "dueDate" | "createdAt" | "type" | "priority";
+type SortDir = "asc" | "desc";
+
 type Task = {
   id: string;
   title: string;
@@ -24,6 +27,8 @@ type Task = {
   createdAt: string;
   updatedAt: string;
 };
+
+const priorityOrder: Record<TaskPriority, number> = { critical: 0, high: 1, low: 2 };
 
 type TaskPayload = {
   title?: string;
@@ -125,6 +130,10 @@ export default function TaskCenterPage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | "archived">("all");
+  const [search, setSearch] = useState("");
+  const [typeFilter, setTypeFilter] = useState<TaskType | "all">("all");
+  const [sortKey, setSortKey] = useState<SortKey>("dueDate");
+  const [sortDir, setSortDir] = useState<SortDir>("asc");
 
   // Check URL query param for filter
   useEffect(() => {
@@ -179,6 +188,71 @@ export default function TaskCenterPage() {
       };
     },
     [tasks, filter]
+  );
+
+  const isFilterActive = search.trim() !== "" || typeFilter !== "all" || sortKey !== "dueDate" || sortDir !== "asc";
+
+  const applyFilters = useCallback((list: Task[]): Task[] => {
+    let result = list;
+
+    // Type/project filter
+    if (typeFilter !== "all") {
+      result = result.filter((t) => t.type === typeFilter);
+    }
+
+    // Search filter (title + details)
+    if (search.trim()) {
+      const q = search.trim().toLowerCase();
+      result = result.filter(
+        (t) =>
+          t.title.toLowerCase().includes(q) ||
+          (t.details && t.details.toLowerCase().includes(q))
+      );
+    }
+
+    // Sort
+    result = [...result].sort((a, b) => {
+      let cmp = 0;
+      if (sortKey === "dueDate") {
+        const aD = a.dueDate ?? "9999";
+        const bD = b.dueDate ?? "9999";
+        cmp = aD.localeCompare(bD);
+      } else if (sortKey === "createdAt") {
+        cmp = a.createdAt.localeCompare(b.createdAt);
+      } else if (sortKey === "type") {
+        cmp = a.type.localeCompare(b.type);
+      } else if (sortKey === "priority") {
+        cmp = priorityOrder[a.priority] - priorityOrder[b.priority];
+      }
+      return sortDir === "asc" ? cmp : -cmp;
+    });
+
+    return result;
+  }, [search, typeFilter, sortKey, sortDir]);
+
+  const filteredGrouped = useMemo(() => ({
+    recurring: applyFilters(grouped.recurring),
+    oneOff: applyFilters(grouped.oneOff),
+    goal: applyFilters(grouped.goal),
+    archived: applyFilters(grouped.archived),
+  }), [grouped, applyFilters]);
+
+  const totalFiltered = useMemo(
+    () =>
+      filteredGrouped.recurring.length +
+      filteredGrouped.oneOff.length +
+      filteredGrouped.goal.length +
+      (filter === "archived" ? filteredGrouped.archived.length : 0),
+    [filteredGrouped, filter]
+  );
+
+  const totalAll = useMemo(
+    () =>
+      grouped.recurring.length +
+      grouped.oneOff.length +
+      grouped.goal.length +
+      (filter === "archived" ? grouped.archived.length : 0),
+    [grouped, filter]
   );
 
   const priorityOverview = useMemo(
@@ -532,7 +606,94 @@ export default function TaskCenterPage() {
       {loading ? (
         <p className="text-sm text-black/55">Loading tasks...</p>
       ) : (
-        <div className="grid gap-4">
+        <>
+          {/* Filter / Sort Bar */}
+          <section className="surface p-4 space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              {/* Search */}
+              <div className="relative flex-1 min-w-48">
+                <input
+                  className="input pl-8 w-full"
+                  placeholder="Search tasks..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-black/35 text-sm">🔍</span>
+                {search && (
+                  <button
+                    onClick={() => setSearch("")}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-black/35 hover:text-black/70"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+
+              {/* Project / Type filter */}
+              <div className="flex items-center gap-1">
+                {(["all", "recurring", "one-off", "goal"] as const).map((t) => (
+                  <button
+                    key={t}
+                    onClick={() => setTypeFilter(t)}
+                    className={`rounded-lg border px-2.5 py-1.5 text-xs font-medium transition ${
+                      typeFilter === t
+                        ? "border-black bg-black text-white"
+                        : "border-black/10 bg-white text-black/60 hover:border-black/25"
+                    }`}
+                  >
+                    {t === "all" ? "All types" : typeLabels[t]}
+                  </button>
+                ))}
+              </div>
+
+              {/* Sort controls */}
+              <div className="flex items-center gap-1.5">
+                <span className="text-xs text-black/40">Sort:</span>
+                <select
+                  className="input py-1.5 text-xs"
+                  value={sortKey}
+                  onChange={(e) => setSortKey(e.target.value as SortKey)}
+                >
+                  <option value="dueDate">Due date</option>
+                  <option value="createdAt">Created</option>
+                  <option value="type">Type</option>
+                  <option value="priority">Priority</option>
+                </select>
+                <button
+                  onClick={() => setSortDir((d) => (d === "asc" ? "desc" : "asc"))}
+                  className="rounded-lg border border-black/10 bg-white px-2 py-1.5 text-xs text-black/60 hover:border-black/25"
+                  title={sortDir === "asc" ? "Ascending" : "Descending"}
+                >
+                  {sortDir === "asc" ? "↑" : "↓"}
+                </button>
+
+                {/* Clear filters */}
+                {isFilterActive && (
+                  <button
+                    onClick={() => {
+                      setSearch("");
+                      setTypeFilter("all");
+                      setSortKey("dueDate");
+                      setSortDir("asc");
+                    }}
+                    className="rounded-lg border border-rose-200 bg-rose-50 px-2.5 py-1.5 text-xs text-rose-700 hover:bg-rose-100 transition"
+                  >
+                    Clear filters
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Task count */}
+            {isFilterActive && (
+              <p className="text-xs text-black/50">
+                Showing <span className="font-medium text-black/70">{totalFiltered}</span> of{" "}
+                <span className="font-medium text-black/70">{totalAll}</span> tasks
+              </p>
+            )}
+          </section>
+
+          <div className="grid gap-4">
           {filter === "archived" && (
             <button
               onClick={() => setFilter("all")}
@@ -541,9 +702,9 @@ export default function TaskCenterPage() {
               ← Back to Active Tasks
             </button>
           )}
-          {renderTaskList("Recurring", grouped.recurring)}
-          {renderTaskList("One-off", grouped.oneOff)}
-          {renderTaskList("Long-term goals", grouped.goal)}
+          {renderTaskList("Recurring", filteredGrouped.recurring)}
+          {renderTaskList("One-off", filteredGrouped.oneOff)}
+          {renderTaskList("Long-term goals", filteredGrouped.goal)}
           {filter === "all" && grouped.archived.length > 0 && (
             <button
               onClick={() => setFilter("archived")}
@@ -552,8 +713,9 @@ export default function TaskCenterPage() {
               <span className="text-sm text-zinc-500">View {grouped.archived.length} archived tasks →</span>
             </button>
           )}
-          {filter === "archived" && renderTaskList("Archived (done > 7 days)", grouped.archived)}
+          {filter === "archived" && renderTaskList("Archived (done > 7 days)", filteredGrouped.archived)}
         </div>
+        </>
       )}
     </div>
   );
