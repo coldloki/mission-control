@@ -1,0 +1,1968 @@
+
+> mission-control@0.1.0 dev
+> next dev -p 3001
+
+   ▲ Next.js 15.1.6
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.1.30:3001
+
+ ✓ Starting...
+ ✓ Ready in 1029ms
+ ✓ Compiled /_not-found in 486ms (592 modules)
+ GET /api/tasks 404 in 599ms
+ ✓ Compiled in 144ms (295 modules)
+ ✓ Compiled /tools/task-center in 126ms (611 modules)
+ GET /tools/task-center 200 in 185ms
+ ✓ Compiled in 90ms (300 modules)
+ ✓ Compiled in 117ms (300 modules)
+ ✓ Compiled in 91ms (300 modules)
+ ✓ Compiled in 88ms (300 modules)
+ ✓ Compiled in 96ms (300 modules)
+ ✓ Compiled in 85ms (300 modules)
+ ✓ Compiled in 81ms (297 modules)
+ ✓ Compiled in 85ms (297 modules)
+ ✓ Compiled in 87ms (297 modules)
+ ✓ Compiled in 86ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 70ms (297 modules)
+ ✓ Compiled in 73ms (297 modules)
+ ✓ Compiled in 91ms (297 modules)
+ ✓ Compiled in 86ms (297 modules)
+ ✓ Compiled in 89ms (297 modules)
+ ✓ Compiled in 82ms (297 modules)
+ ✓ Compiled in 92ms (297 modules)
+ ✓ Compiled in 68ms (297 modules)
+ ✓ Compiled in 85ms (297 modules)
+ ✓ Compiled in 76ms (297 modules)
+ ✓ Compiled in 91ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 160ms (297 modules)
+ ✓ Compiled in 164ms (297 modules)
+ ✓ Compiled in 64ms (297 modules)
+ ✓ Compiled in 88ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 70ms (297 modules)
+ ✓ Compiled in 69ms (297 modules)
+ ✓ Compiled in 88ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 63ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 65ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 66ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 64ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 51ms (297 modules)
+ ✓ Compiled in 69ms (297 modules)
+ ✓ Compiled in 52ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 54ms (297 modules)
+ ✓ Compiled in 76ms (297 modules)
+ ✓ Compiled in 65ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 69ms (297 modules)
+ ✓ Compiled in 73ms (297 modules)
+ ✓ Compiled in 68ms (297 modules)
+ ✓ Compiled in 75ms (297 modules)
+ ✓ Compiled in 66ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 66ms (297 modules)
+ ✓ Compiled in 86ms (297 modules)
+ ✓ Compiled in 64ms (297 modules)
+ ✓ Compiled in 69ms (297 modules)
+ ✓ Compiled in 67ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 64ms (297 modules)
+ ✓ Compiled in 73ms (297 modules)
+ ✓ Compiled in 69ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 67ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 67ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 63ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 68ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 69ms (297 modules)
+ ✓ Compiled in 89ms (297 modules)
+ ✓ Compiled in 82ms (297 modules)
+ ✓ Compiled in 80ms (297 modules)
+ ✓ Compiled in 70ms (297 modules)
+ ✓ Compiled in 78ms (297 modules)
+ ✓ Compiled in 73ms (297 modules)
+ ✓ Compiled in 88ms (297 modules)
+ ✓ Compiled in 75ms (297 modules)
+ ✓ Compiled in 83ms (297 modules)
+ ✓ Compiled in 73ms (297 modules)
+ ✓ Compiled in 75ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 87ms (297 modules)
+ ✓ Compiled in 80ms (297 modules)
+ ✓ Compiled in 90ms (297 modules)
+ ✓ Compiled in 65ms (297 modules)
+ ✓ Compiled in 92ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 88ms (297 modules)
+ ✓ Compiled in 87ms (297 modules)
+ ✓ Compiled in 87ms (297 modules)
+ ✓ Compiled in 69ms (297 modules)
+ ✓ Compiled in 76ms (297 modules)
+ ✓ Compiled in 82ms (297 modules)
+ ✓ Compiled in 87ms (297 modules)
+ ✓ Compiled in 88ms (297 modules)
+ ✓ Compiled in 86ms (297 modules)
+ ✓ Compiled in 80ms (297 modules)
+ ✓ Compiled in 89ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 95ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 67ms (297 modules)
+ ✓ Compiled in 76ms (297 modules)
+ ✓ Compiled in 75ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 67ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 69ms (297 modules)
+ ✓ Compiled in 89ms (297 modules)
+ ✓ Compiled in 70ms (297 modules)
+ ✓ Compiled in 78ms (297 modules)
+ ✓ Compiled in 81ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 80ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 60ms (297 modules)
+ ✓ Compiled in 78ms (297 modules)
+ ✓ Compiled in 82ms (297 modules)
+ ✓ Compiled in 90ms (297 modules)
+ ✓ Compiled in 81ms (297 modules)
+ ✓ Compiled in 75ms (297 modules)
+ ✓ Compiled in 80ms (297 modules)
+ ✓ Compiled in 89ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 88ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 80ms (297 modules)
+ ✓ Compiled in 80ms (297 modules)
+ ✓ Compiled in 87ms (297 modules)
+ ✓ Compiled in 70ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 78ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 86ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 86ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 76ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 81ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 78ms (297 modules)
+ ✓ Compiled in 81ms (297 modules)
+ ✓ Compiled in 86ms (297 modules)
+ ✓ Compiled in 64ms (297 modules)
+ ✓ Compiled in 88ms (297 modules)
+ ✓ Compiled in 69ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 72ms (297 modules)
+ ✓ Compiled in 84ms (297 modules)
+ ✓ Compiled in 78ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 74ms (297 modules)
+ ✓ Compiled in 93ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 71ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 99ms (297 modules)
+ ✓ Compiled in 86ms (297 modules)
+ ✓ Compiled in 84ms (297 modules)
+ ✓ Compiled in 77ms (297 modules)
+ ✓ Compiled in 81ms (297 modules)
+ ✓ Compiled in 83ms (297 modules)
+ ✓ Compiled in 79ms (297 modules)
+ ✓ Compiled in 75ms (297 modules)
+ ✓ Compiled /_not-found in 70ms (583 modules)
+ GET /api/tasks 404 in 131ms
+ ✓ Compiled in 89ms (300 modules)
+ ✓ Compiled in 90ms (300 modules)
+ ✓ Compiled /tools/task-center in 42ms (325 modules)
+ GET /tools/task-center 200 in 110ms
+ GET /tools/task-center 200 in 15ms
+ ✓ Compiled in 92ms (300 modules)
+ ✓ Compiled /api/sqlite/tasks in 116ms (631 modules)
+ GET /api/sqlite/tasks 200 in 182ms
+ ✓ Compiled in 84ms (301 modules)
+ ✓ Compiled in 87ms (301 modules)
+ ✓ Compiled in 87ms (301 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 96ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 86ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 94ms (298 modules)
+ ✓ Compiled in 61ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 93ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 86ms (298 modules)
+ ✓ Compiled in 94ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 85ms
+ GET /api/sqlite/tasks 200 in 21ms
+ GET /tools/task-center 200 in 22ms
+ GET /api/sqlite/tasks 200 in 6ms
+ ✓ Compiled in 82ms (298 modules)
+ GET /tools/task-center 200 in 9ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 77ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 83ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 71ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 77ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 74ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 90ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 81ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 67ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 88ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 71ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 87ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 73ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 87ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 75ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 80ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 72ms (298 modules)
+ GET /tools/task-center 200 in 17ms
+ ✓ Compiled in 81ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 83ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 78ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 81ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 80ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 81ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 81ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 73ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 95ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 91ms (298 modules)
+ GET /tools/task-center 200 in 16ms
+ ✓ Compiled in 69ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 82ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 74ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 89ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 67ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 88ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 67ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 89ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 69ms (298 modules)
+ GET /tools/task-center 200 in 13ms
+ ✓ Compiled in 88ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 78ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 77ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 76ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 88ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 72ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 77ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 80ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 80ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 74ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 73ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 68ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 77ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 74ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 90ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 80ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 78ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 61ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 76ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 89ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 75ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 81ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 74ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 88ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 76ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 76ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 77ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 86ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 74ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 74ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 67ms (298 modules)
+ GET /tools/task-center 200 in 16ms
+ ✓ Compiled in 85ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 67ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 85ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 78ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 88ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 76ms (298 modules)
+ GET /tools/task-center 200 in 11ms
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled /_not-found in 71ms (612 modules)
+ GET /api/tasks 404 in 128ms
+ ✓ Compiled in 93ms (301 modules)
+ ✓ Compiled in 91ms (301 modules)
+ ✓ Compiled /api/sqlite/tasks in 40ms (344 modules)
+ GET /api/sqlite/tasks 200 in 85ms
+ ✓ Compiled in 94ms (301 modules)
+ ✓ Compiled in 84ms (301 modules)
+ ✓ Compiled in 93ms (301 modules)
+ ✓ Compiled in 78ms (301 modules)
+ ✓ Compiled in 97ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 59ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 59ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 93ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 94ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ GET /tools/task-center 200 in 62ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 34ms
+ GET /tools/task-center 200 in 5ms
+ GET /tools/task-center 200 in 3ms
+ GET /tools/task-center 200 in 3ms
+ GET /tools/task-center 200 in 3ms
+ GET /tools/task-center 200 in 3ms
+ GET /tools/task-center 200 in 4ms
+ GET /tools/task-center 200 in 5ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 14ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 9ms
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 92ms (298 modules)
+ ✓ Compiled in 62ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 64ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 61ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 93ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 14ms
+ GET /tools/task-center 200 in 14ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 16ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 15ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 33ms
+ GET /tools/task-center 200 in 5ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 14ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 15ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 14ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 15ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 86ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 99ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ GET /tools/task-center 200 in 21ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 6ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 14ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 14ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 13ms
+ GET /tools/task-center 200 in 11ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 10ms
+ GET /tools/task-center 200 in 8ms
+ GET /tools/task-center 200 in 9ms
+ GET /tools/task-center 200 in 12ms
+ GET /tools/task-center 200 in 7ms
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 81ms (298 modules)
+ GET /tools/task-center 200 in 15ms
+ ✓ Compiled in 86ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 81ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 72ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 86ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 67ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 80ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 78ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled /_not-found in 76ms (612 modules)
+ GET /api/tasks 404 in 132ms
+ GET /api/health 404 in 9ms
+ ✓ Compiled in 95ms (301 modules)
+ GET /tools/task-center 200 in 16ms
+ ✓ Compiled in 88ms (301 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 85ms (301 modules)
+ GET /tools/task-center 200 in 16ms
+ ✓ Compiled in 88ms (301 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 84ms (301 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 108ms (301 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 94ms (301 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 73ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 75ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 80ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 71ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 91ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 80ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 92ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 78ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 93ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 83ms (298 modules)
+ GET /tools/task-center 200 in 8ms
+ ✓ Compiled in 91ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 68ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 76ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 68ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 67ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 77ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 80ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 88ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 71ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 92ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 87ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 82ms (298 modules)
+ GET /tools/task-center 200 in 15ms
+ ✓ Compiled in 89ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 73ms (298 modules)
+ GET /tools/task-center 200 in 6ms
+ ✓ Compiled in 77ms (298 modules)
+ GET /tools/task-center 200 in 4ms
+ ✓ Compiled in 79ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 88ms (298 modules)
+ GET /tools/task-center 200 in 5ms
+ ✓ Compiled in 81ms (298 modules)
+ GET /tools/task-center 200 in 7ms
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 65ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 86ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 65ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 65ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 86ms (298 modules)
+ ✓ Compiled in 92ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 101ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 92ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 59ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 86ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 61ms (298 modules)
+ ✓ Compiled in 92ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 64ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 65ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 55ms (298 modules)
+ ✓ Compiled in 83ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled /_not-found in 73ms (612 modules)
+ GET /api/tasks 404 in 116ms
+ ✓ Compiled in 89ms (301 modules)
+ ✓ Compiled /api/sqlite/tasks in 43ms (344 modules)
+ GET /api/sqlite/tasks 200 in 89ms
+ ✓ Compiled in 80ms (301 modules)
+ ✓ Compiled in 91ms (301 modules)
+ ✓ Compiled in 97ms (301 modules)
+ ✓ Compiled in 98ms (301 modules)
+ ✓ Compiled in 82ms (301 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 86ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 86ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 89ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 91ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 85ms (298 modules)
+ ✓ Compiled in 82ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 86ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 81ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 93ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 88ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 90ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 64ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 67ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 58ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 64ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 64ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 80ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 59ms (298 modules)
+ ✓ Compiled in 74ms (298 modules)
+ ✓ Compiled in 76ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 182ms (298 modules)
+ ✓ Compiled in 84ms (298 modules)
+ ✓ Compiled in 53ms (298 modules)
+ ✓ Compiled in 87ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 70ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 77ms (298 modules)
+ ✓ Compiled in 65ms (298 modules)
+ ✓ Compiled in 117ms (298 modules)
+ ✓ Compiled in 65ms (298 modules)
+ ✓ Compiled in 64ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 63ms (298 modules)
+ ✓ Compiled in 66ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 65ms (298 modules)
+ ✓ Compiled in 75ms (298 modules)
+ ✓ Compiled in 48ms (298 modules)
+ ✓ Compiled in 72ms (298 modules)
+ ✓ Compiled in 79ms (298 modules)
+ ✓ Compiled in 69ms (298 modules)
+ ✓ Compiled in 73ms (298 modules)
+ ✓ Compiled in 71ms (298 modules)
+ ✓ Compiled in 58ms (298 modules)
+ ✓ Compiled in 58ms (298 modules)
+ ✓ Compiled in 68ms (298 modules)
+ ✓ Compiled in 78ms (298 modules)
+ ✓ Compiled in 50ms (298 modules)
+ ✓ Compiled in 63ms (298 modules)
+ ✓ Compiled / in 146ms (615 modules)
+ GET / 200 in 222ms
+ ✓ Compiled /api/sqlite/stats in 64ms (633 modules)
+ GET /api/sqlite/stats 200 in 118ms
+ ✓ Compiled in 71ms (300 modules)
+ GET / 200 in 25ms
+ ✓ Compiled in 91ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 59ms (300 modules)
+ GET / 200 in 14ms
+ ✓ Compiled in 84ms (300 modules)
+ GET / 200 in 17ms
+ ✓ Compiled in 67ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 57ms (300 modules)
+ GET / 200 in 4ms
+ ✓ Compiled in 77ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 71ms (300 modules)
+ GET / 200 in 22ms
+ ✓ Compiled in 68ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 88ms (300 modules)
+ GET / 200 in 9ms
+ ✓ Compiled in 66ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 67ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 74ms (300 modules)
+ GET / 200 in 5ms
+ ✓ Compiled in 71ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 65ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 231ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 166ms (300 modules)
+ ✓ Compiled in 80ms (300 modules)
+ GET / 200 in 58ms
+ GET / 200 in 9ms
+ ✓ Compiled in 90ms (300 modules)
+ GET / 200 in 4ms
+ ✓ Compiled in 67ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 77ms (300 modules)
+ GET / 200 in 17ms
+ ✓ Compiled /_not-found in 85ms (619 modules)
+ GET /api/tasks 404 in 143ms
+ GET /api/health 404 in 9ms
+ ✓ Compiled in 75ms (303 modules)
+ GET / 200 in 27ms
+ ✓ Compiled in 82ms (303 modules)
+ GET / 200 in 5ms
+ ✓ Compiled in 75ms (303 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 82ms (303 modules)
+ GET / 200 in 17ms
+ ✓ Compiled in 71ms (303 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 71ms (303 modules)
+ GET / 200 in 17ms
+ ✓ Compiled in 70ms (300 modules)
+ GET / 200 in 16ms
+ ✓ Compiled in 77ms (300 modules)
+ GET / 200 in 16ms
+ ✓ Compiled in 66ms (300 modules)
+ GET / 200 in 22ms
+ ✓ Compiled in 79ms (300 modules)
+ GET / 200 in 18ms
+ ✓ Compiled in 65ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 78ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 65ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 79ms (300 modules)
+ GET / 200 in 8ms
+ ✓ Compiled in 63ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 75ms (300 modules)
+ GET / 200 in 18ms
+ ✓ Compiled in 68ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 78ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 64ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 79ms (300 modules)
+ GET / 200 in 17ms
+ ✓ Compiled in 67ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 76ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 70ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 82ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 65ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 78ms (300 modules)
+ GET / 200 in 5ms
+ ✓ Compiled in 58ms (300 modules)
+ ✓ Compiled in 79ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 81ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 83ms (300 modules)
+ ✓ Compiled in 65ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 65ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ GET / 200 in 11ms
+ GET / 200 in 7ms
+ GET / 200 in 6ms
+ GET / 200 in 6ms
+ GET / 200 in 5ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 7ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 5ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ ✓ Compiled in 72ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 71ms (300 modules)
+ GET / 200 in 18ms
+ ✓ Compiled in 62ms (300 modules)
+ GET / 200 in 19ms
+ ✓ Compiled in 86ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 75ms (300 modules)
+ GET / 200 in 19ms
+ ✓ Compiled in 76ms (300 modules)
+ GET / 200 in 13ms
+ ✓ Compiled in 68ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 81ms (300 modules)
+ GET / 200 in 14ms
+ ✓ Compiled in 69ms (300 modules)
+ GET / 200 in 15ms
+ ✓ Compiled in 84ms (300 modules)
+ GET / 200 in 20ms
+ ✓ Compiled in 67ms (300 modules)
+ GET / 200 in 17ms
+ ✓ Compiled in 74ms (300 modules)
+ GET / 200 in 5ms
+ ✓ Compiled in 64ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 80ms (300 modules)
+ GET / 200 in 14ms
+ ✓ Compiled in 61ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 80ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 61ms (300 modules)
+ GET / 200 in 15ms
+ ✓ Compiled in 81ms (300 modules)
+ GET / 200 in 19ms
+ ✓ Compiled in 65ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 78ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 67ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 74ms (300 modules)
+ GET / 200 in 13ms
+ ✓ Compiled in 72ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 64ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 64ms (300 modules)
+ GET / 200 in 9ms
+ ✓ Compiled in 79ms (300 modules)
+ GET / 200 in 5ms
+ ✓ Compiled in 71ms (300 modules)
+ GET / 200 in 15ms
+ ✓ Compiled in 75ms (300 modules)
+ GET / 200 in 8ms
+ ✓ Compiled in 56ms (300 modules)
+ GET / 200 in 5ms
+ ✓ Compiled in 68ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 74ms (300 modules)
+ GET / 200 in 12ms
+ ✓ Compiled in 83ms (300 modules)
+ GET / 200 in 18ms
+ ✓ Compiled in 68ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 72ms (300 modules)
+ GET / 200 in 18ms
+ ✓ Compiled in 69ms (300 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 79ms (300 modules)
+ GET / 200 in 5ms
+ ✓ Compiled in 66ms (300 modules)
+ GET / 200 in 15ms
+ ✓ Compiled in 78ms (300 modules)
+ GET / 200 in 18ms
+ ✓ Compiled in 70ms (300 modules)
+ GET / 200 in 14ms
+ ✓ Compiled in 83ms (300 modules)
+ GET / 200 in 5ms
+ ✓ Compiled in 71ms (300 modules)
+ GET / 200 in 9ms
+ ✓ Compiled in 72ms (300 modules)
+ GET / 200 in 5ms
+ ✓ Compiled in 71ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 80ms (300 modules)
+ GET / 200 in 16ms
+ ✓ Compiled in 62ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 81ms (300 modules)
+ GET / 200 in 12ms
+ ✓ Compiled in 68ms (300 modules)
+ GET / 200 in 6ms
+ ✓ Compiled in 71ms (300 modules)
+ GET / 200 in 18ms
+ ✓ Compiled in 62ms (300 modules)
+ ✓ Compiled in 81ms (300 modules)
+ ✓ Compiled in 70ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 79ms (300 modules)
+ ✓ Compiled in 70ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 80ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 70ms (300 modules)
+ ✓ Compiled in 81ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 62ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 73ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 76ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 74ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 87ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 81ms (300 modules)
+ ✓ Compiled in 81ms (300 modules)
+ ✓ Compiled in 83ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 92ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 90ms (300 modules)
+ ✓ Compiled in 74ms (300 modules)
+ ✓ Compiled in 83ms (300 modules)
+ ✓ Compiled in 74ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 76ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 74ms (300 modules)
+ ✓ Compiled in 95ms (300 modules)
+ ✓ Compiled in 82ms (300 modules)
+ ✓ Compiled in 92ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 86ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 81ms (300 modules)
+ ✓ Compiled in 87ms (300 modules)
+ ✓ Compiled in 89ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 86ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ GET / 200 in 40ms
+ GET / 200 in 14ms
+ GET / 200 in 17ms
+ GET / 200 in 9ms
+ GET / 200 in 8ms
+ GET / 200 in 5ms
+ GET / 200 in 5ms
+ GET / 200 in 4ms
+ GET / 200 in 5ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 5ms
+ GET / 200 in 5ms
+ GET / 200 in 7ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 4ms
+ GET / 200 in 8ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 4ms
+ GET / 200 in 10ms
+ GET / 200 in 8ms
+ GET / 200 in 7ms
+ GET / 200 in 5ms
+ GET / 200 in 5ms
+ GET / 200 in 5ms
+ GET / 200 in 5ms
+ GET / 200 in 6ms
+ GET / 200 in 6ms
+ GET / 200 in 4ms
+ GET / 200 in 5ms
+ GET / 200 in 5ms
+ GET / 200 in 5ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 5ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ ✓ Compiled in 82ms (300 modules)
+ ✓ Compiled in 56ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 57ms (300 modules)
+ ✓ Compiled in 56ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 54ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 65ms (300 modules)
+ ✓ Compiled in 50ms (300 modules)
+ ✓ Compiled in 53ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 54ms (300 modules)
+ ✓ Compiled in 57ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 50ms (300 modules)
+ ✓ Compiled /_not-found in 71ms (619 modules)
+ GET /api/tasks 404 in 127ms
+ ✓ Compiled in 56ms (303 modules)
+ ✓ Compiled in 60ms (303 modules)
+ ✓ Compiled in 52ms (303 modules)
+ ✓ Compiled in 67ms (303 modules)
+ ✓ Compiled in 55ms (303 modules)
+ ✓ Compiled in 62ms (303 modules)
+ ✓ Compiled in 57ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 70ms (300 modules)
+ ✓ Compiled in 58ms (300 modules)
+ ✓ Compiled in 70ms (300 modules)
+ ✓ Compiled in 62ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 58ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 61ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 56ms (300 modules)
+ ✓ Compiled in 76ms (300 modules)
+ ✓ Compiled in 55ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 60ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 65ms (300 modules)
+ ✓ Compiled in 86ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 51ms (300 modules)
+ ✓ Compiled in 82ms (300 modules)
+ ✓ Compiled in 49ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 55ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 53ms (300 modules)
+ ✓ Compiled in 79ms (300 modules)
+ ✓ Compiled in 56ms (300 modules)
+ ✓ Compiled in 50ms (300 modules)
+ ✓ Compiled in 58ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 79ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 40ms (300 modules)
+ ✓ Compiled in 35ms (300 modules)
+ ✓ Compiled in 34ms (300 modules)
+ ✓ Compiled in 39ms (300 modules)
+ ✓ Compiled in 42ms (300 modules)
+ ✓ Compiled in 34ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 40ms (300 modules)
+ ✓ Compiled in 35ms (300 modules)
+ ✓ Compiled in 33ms (300 modules)
+ ✓ Compiled in 39ms (300 modules)
+ GET / 200 in 15ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 6ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 6ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 7ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 6ms
+ GET / 200 in 5ms
+ GET / 200 in 8ms
+ GET / 200 in 6ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 5ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ ✓ Compiled in 65ms (300 modules)
+ ✓ Compiled in 76ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 65ms (300 modules)
+ ✓ Compiled in 73ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 58ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 62ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 74ms (300 modules)
+ ✓ Compiled in 62ms (300 modules)
+ ✓ Compiled in 52ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 54ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 60ms (300 modules)
+ ✓ Compiled in 61ms (300 modules)
+ ✓ Compiled in 55ms (300 modules)
+ ✓ Compiled in 57ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 60ms (300 modules)
+ ✓ Compiled in 51ms (300 modules)
+ ✓ Compiled in 55ms (300 modules)
+ ✓ Compiled in 34ms (300 modules)
+ ✓ Compiled in 49ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 58ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 77ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 80ms (300 modules)
+ ✓ Compiled in 56ms (300 modules)
+ ✓ Compiled in 60ms (300 modules)
+ ✓ Compiled in 49ms (300 modules)
+ ✓ Compiled in 61ms (300 modules)
+ ✓ Compiled in 50ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 49ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 56ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 58ms (300 modules)
+ ✓ Compiled in 65ms (300 modules)
+ ✓ Compiled in 47ms (300 modules)
+ ✓ Compiled in 57ms (300 modules)
+ ✓ Compiled in 46ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 48ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 54ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 70ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 61ms (300 modules)
+ ✓ Compiled in 78ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 76ms (300 modules)
+ ✓ Compiled in 80ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 70ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 57ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 61ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 58ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ GET / 200 in 15ms
+ GET / 200 in 6ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 6ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 6ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 6ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 6ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 3ms
+ GET / 200 in 6ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 4ms
+ GET / 200 in 4ms
+ GET / 200 in 6ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 5ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 7ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 3ms
+ GET / 200 in 5ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 2ms
+ GET / 200 in 5ms
+ GET / 200 in 3ms
+ GET / 200 in 3ms
+ GET / 200 in 2ms
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 80ms (300 modules)
+ ✓ Compiled in 52ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 57ms (300 modules)
+ ✓ Compiled in 92ms (300 modules)
+ ✓ Compiled in 61ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 58ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 57ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 60ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 52ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 52ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 62ms (300 modules)
+ ✓ Compiled in 43ms (300 modules)
+ ✓ Compiled in 64ms (300 modules)
+ ✓ Compiled in 63ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 59ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 79ms (300 modules)
+ ✓ Compiled in 79ms (300 modules)
+ ✓ Compiled in 89ms (300 modules)
+ ✓ Compiled in 68ms (300 modules)
+ ✓ Compiled in 76ms (300 modules)
+ ✓ Compiled in 69ms (300 modules)
+ ✓ Compiled in 86ms (300 modules)
+ ✓ Compiled in 67ms (300 modules)
+ ✓ Compiled in 88ms (300 modules)
+ ✓ Compiled in 83ms (300 modules)
+ ✓ Compiled in 76ms (300 modules)
+ ✓ Compiled in 75ms (300 modules)
+ ✓ Compiled in 82ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 80ms (300 modules)
+ ✓ Compiled in 74ms (300 modules)
+ ✓ Compiled in 91ms (300 modules)
+ ✓ Compiled in 79ms (300 modules)
+ ✓ Compiled in 92ms (300 modules)
+ ✓ Compiled in 62ms (300 modules)
+ ✓ Compiled in 84ms (300 modules)
+ ✓ Compiled in 82ms (300 modules)
+ ✓ Compiled in 84ms (300 modules)
+ ✓ Compiled in 81ms (300 modules)
+ ✓ Compiled in 87ms (300 modules)
+ ✓ Compiled in 66ms (300 modules)
+ ✓ Compiled in 76ms (300 modules)
+ ✓ Compiled in 71ms (300 modules)
+ ✓ Compiled in 82ms (300 modules)
+ ✓ Compiled in 89ms (300 modules)
+ ✓ Compiled in 76ms (300 modules)
+ ✓ Compiled in 70ms (300 modules)
+ ✓ Compiled in 72ms (300 modules)
+ ✓ Compiled in 73ms (300 modules)
+[?25h

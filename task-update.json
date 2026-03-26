@@ -1,0 +1,16 @@
+{
+  "id": "b8e4d903-5f2a-4c6b-8d4e-9f3a7b2c0e1d",
+  "title": "Home Page - Verify Summary View",
+  "details": "Verify home page displays only summary cards (task stats by status and sync status). Remove any task list sections. Ensure system uses SQLite exclusively.",
+  "status": "done",
+  "priority": "low",
+  "phase": "1",
+  "milestones": [
+    "Home page already shows summary view ✅",
+    "No task list section present ✅",
+    "Uses SQLite endpoints ✅"
+  ],
+  "createdAt": "2026-03-01T19:35:00Z",
+  "updatedAt": "2026-03-01T19:35:00Z",
+  "completedAt": "2026-03-01T19:35:00Z"
+}

@@ -1,0 +1,533 @@
+[
+  {
+    "id": "8f6a2f57-c5fd-4358-960e-c30c512c6420",
+    "title": "Localization",
+    "details": "With every new update keep things translated (English/German) in the iOS. Dashboard needs to be only in German.",
+    "type": "one-off",
+    "status": "in_progress",
+    "priority": "high",
+    "dueDate": "2026-03-31",
+    "schedule": null,
+    "milestones": [],
+    "automationPrompt": null,
+    "lastRunAt": null,
+    "lastRunStatus": null,
+    "cronJobId": null,
+    "createdAt": "2026-02-26T18:30:20.236Z",
+    "updatedAt": "2026-02-28T22:10:35.025Z"
+  },
+  {
+    "id": "13359d43-ae25-40b4-90ff-9bde27848c5f",
+    "title": "In-app support call action",
+    "details": "One-tap support call button in settings/help/order context.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "low",
+    "dueDate": "2026-03-25",
+    "schedule": null,
+    "milestones": [],
+    "automationPrompt": null,
+    "lastRunAt": null,
+    "lastRunStatus": null,
+    "cronJobId": null,
+    "createdAt": "2026-02-23T16:40:54Z",
+    "updatedAt": "2026-02-26T16:34:42.260Z"
+  },
+  {
+    "id": "98d7d558-510c-479b-af94-377a565f5324",
+    "title": "API exposure hardening pass (Copyshop Backend)",
+    "details": "Review public API surface, lock down customer history/auth, protect uploads with signed access, and tighten rate limits/logging.\n\n**Security review completed by Grok subagent.**\n\n### Findings Summary\n| Gap | Risk |\n|-----|------|\n| Unauthenticated order creation | Spam/DoS |\n| Public admin dashboard (`/admin`) | Unauthorized UI access |\n| Public static uploads (`/uploads/...`) | File enumeration, no signed URLs |\n| DeviceId-based order leak | Privacy exposure |\n| No request/logging | Audit gaps |\n| Single shared ADMIN_TOKEN | Token leakage = full compromise |\n\n### Remediation (ordered)\n1. Protect `POST /api/orders` with ORDER_API_KEY or device-level auth.\n2. Add `requireAdmin` middleware to `/admin` static route.\n3. Secure `/uploads` with auth or signed URLs (e.g., token-based lookup in DB).\n4. Add auth to `GET /api/orders?deviceId=...` or scope it strictly.\n5. Add request/access logging (e.g., morgan).\n6. Consider JWT/session-based admin auth instead of shared token.\n\n**Action: Present this report to user for prioritization before implementation.**",
+    "type": "one-off",
+    "status": "in_progress",
+    "priority": "critical",
+    "dueDate": "2026-02-26",
+    "schedule": null,
+    "milestones": [
+      "Map all externally reachable endpoints",
+      "Add auth requirement for customer history endpoints",
+      "Protect uploads from direct public enumeration",
+      "Apply per-route rate limits and document security model"
+    ],
+    "automationPrompt": null,
+    "lastRunAt": "2026-02-25T22:50:00Z",
+    "lastRunStatus": null,
+    "cronJobId": null,
+    "createdAt": "2026-02-23T15:33:31Z",
+    "updatedAt": "2026-02-25T22:50:00Z"
+  },
+  {
+    "id": "86d1b62c-f0f0-4895-beb5-f72aae1234cf",
+    "title": "Auto-generate invoice + delivery slip in document folder (target v0.2.2)",
+    "details": "On order submit/acceptance, create invoice + delivery slip and store next to uploaded files.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-10",
+    "schedule": null,
+    "milestones": [],
+    "automationPrompt": null,
+    "lastRunAt": null,
+    "lastRunStatus": null,
+    "cronJobId": null,
+    "createdAt": "2026-02-23T16:40:54Z",
+    "updatedAt": "2026-02-25T18:59:28.082Z"
+  },
+  {
+    "id": "e752f842-d4f8-42d2-b0d5-d1bca111ed59",
+    "title": "Accounting export (CSV) from dashboard summaries (target v0.2.1)",
+    "details": "Export selected periods for accounting reconciliation and bookkeeping.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-07",
+    "schedule": null,
+    "milestones": [],
+    "automationPrompt": null,
+    "lastRunAt": null,
+    "lastRunStatus": null,
+    "cronJobId": null,
+    "createdAt": "2026-02-23T16:40:54Z",
+    "updatedAt": "2026-02-25T18:59:06.588Z"
+  },
+  {
+    "id": "32c6992c-57f2-48a8-8bcd-38d95e41cb06",
+    "title": "Task list hygiene sweep (light, non-forced)",
+    "details": "If there is no urgent work, clean task titles/statuses, split overloaded cards, and propose due dates. Keep this optional and low-pressure.",
+    "type": "recurring",
+    "status": "in_progress",
+    "priority": "low",
+    "dueDate": null,
+    "schedule": "0 */4 * * * Europe/Zurich",
+    "milestones": [
+      "Merge duplicates and archive finished items",
+      "Propose date + priority for new cards",
+      "Avoid noisy updates when no action is needed"
+    ],
+    "automationPrompt": "If no urgent tasks are active, do a light task-list cleanup pass and suggest adjustments only when useful.",
+    "lastRunAt": null,
+    "lastRunStatus": null,
+    "cronJobId": null,
+    "createdAt": "2026-02-23T16:40:54Z",
+    "updatedAt": "2026-02-23T16:40:54Z"
+  },
+  {
+    "id": "81e7a4e8-836b-4912-beee-87f6c5a77699",
+    "title": "Dashboard pickup flow: scan QR (camera/hand scanner) (target v0.2.0)",
+    "details": "Scan customer pickup QR to load order and confirm handover quickly.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-29",
+    "schedule": null,
+    "milestones": [],
+    "automationPrompt": null,
+    "lastRunAt": null,
+    "lastRunStatus": null,
+    "cronJobId": null,
+    "createdAt": "2026-02-23T16:40:54Z",
+    "updatedAt": "2026-02-23T16:40:54Z"
+  },
+  {
+    "id": "913bd512-e10a-4036-910a-dd6f4a0875c8",
+    "title": "PWA + desktop web app for Android/desktop users (target v0.3.0)",
+    "details": "Web ordering experience with installable PWA, parity for core ordering flow.",
+    "type": "goal",
+    "status": "todo",
+    "priority": "low",
+    "dueDate": "2026-05-15",
+    "schedule": null,
+    "milestones": [
+      "Define scope parity with iOS app",
+      "Build responsive order flow",
+      "Add PWA install/offline shell",
+      "Run cross-device QA"
+    ],
+    "automationPrompt": null,
+    "lastRunAt": null,
+    "lastRunStatus": null,
+    "cronJobId": null,
+    "createdAt": "2026-02-23T16:40:54Z",
+    "updatedAt": "2026-02-23T16:40:54Z"
+  },
+  {
+    "id": "74c70413-eafe-4ef4-bdd5-9f6e8ec00e3a",
+    "title": "Mission Control task automation v1",
+    "details": "Connect Task Center recurring tasks with the morning heartbeat so daily agenda runs automatically.",
+    "type": "goal",
+    "status": "done",
+    "priority": "high",
+    "dueDate": "2026-02-25",
+    "schedule": null,
+    "milestones": [
+      "Create 05:45 morning agenda cron",
+      "Auto-run recurring tasks based on schedule",
+      "Send one compact Telegram summary"
+    ],
+    "automationPrompt": null,
+    "lastRunAt": "2026-02-23T15:40:31Z",
+    "lastRunStatus": "ok",
+    "cronJobId": null,
+    "createdAt": "2026-02-23T07:47:50Z",
+    "updatedAt": "2026-02-23T15:40:31Z"
+  },
+  {
+    "title": "Web App - Project Initialization (v1.0.0)",
+    "details": "Create Next.js project with TypeScript, Tailwind CSS, component library (Shadcn/UI), ESLint/Prettier/Husky, and feature branch.",
+    "type": "one-off",
+    "status": "done",
+    "priority": "high",
+    "dueDate": "2026-03-01",
+    "milestones": [
+      "Next.js + TypeScript setup",
+      "Tailwind iOS design system",
+      "Component library setup",
+      "Git branch created"
+    ],
+    "id": "780ad3b9-1a3d-47c1-a56a-c4d90c7dc1e5"
+  },
+  {
+    "title": "Web App - Design System Foundation (v1.0.0)",
+    "details": "Extract iOS color palette, create typography scale (SF Pro), define 8pt spacing, create iOS-style button/card/input components.",
+    "type": "one-off",
+    "status": "done",
+    "priority": "high",
+    "dueDate": "2026-03-02",
+    "milestones": [
+      "Color palette extracted",
+      "Typography scale defined",
+      "Spacing system created",
+      "Component library built"
+    ],
+    "id": "8a5ebd91-5716-4d56-8a09-4052c2652061"
+  },
+  {
+    "title": "Web App - API Integration Layer (v1.0.0)",
+    "details": "Create API client wrapper, configure base URL, implement interceptors, auth handling, error handling, loading states. Test with existing backend.",
+    "type": "one-off",
+    "status": "done",
+    "priority": "high",
+    "dueDate": "2026-03-03",
+    "milestones": [
+      "API client created",
+      "Interceptors implemented",
+      "Error handling added",
+      "Backend tested"
+    ],
+    "id": "5251b2e8-83c8-408a-b1db-2eec69dc79ff"
+  },
+  {
+    "title": "Web App - Navigation & Routing (v1.0.0)",
+    "details": "Set up Next.js app router, iOS-style bottom tab bar, routes (Home, Orders, Cart, Checkout, Profile), deep linking, iOS animations.",
+    "type": "one-off",
+    "status": "done",
+    "priority": "high",
+    "dueDate": "2026-03-04",
+    "milestones": [
+      "App router configured",
+      "Bottom tab bar built",
+      "Routes created",
+      "Animations added"
+    ],
+    "id": "00318d82-9661-44ec-824d-f2a24cba669f"
+  },
+  {
+    "title": "Web App - Order Dashboard (v1.1.0)",
+    "details": "Create order list component, status badges, search, filtering, pull-to-refresh, empty state.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-07",
+    "milestones": [
+      "Order list component",
+      "Status badges",
+      "Search & filter",
+      "Pull-to-refresh"
+    ],
+    "id": "4f8aea8c-46c4-41ac-aff5-0b26c0e101fa"
+  },
+  {
+    "title": "Web App - Product Selection (v1.1.0)",
+    "details": "Create iOS-style product picker, price display with EN/DE, quantity selectors, live price calculation, add-ons, validation.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-08",
+    "milestones": [
+      "Product picker UI",
+      "EN/DE localization",
+      "Live price calc",
+      "Add-on selection"
+    ],
+    "id": "53251d4c-e4f8-42fa-9015-dd96ccb2b20a"
+  },
+  {
+    "title": "Web App - Cart System (v1.1.0)",
+    "details": "Create slide-up cart drawer, cart editing, summary breakdown, localStorage persistence, animations, validation.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-09",
+    "milestones": [
+      "Cart drawer UI",
+      "Editing functionality",
+      "Summary breakdown",
+      "Animation polished"
+    ],
+    "id": "36db883f-0b4b-4456-b79e-20d103c32981"
+  },
+  {
+    "title": "Web App - File Upload System (v1.1.0)",
+    "details": "Create file picker (native + drag-drop), preview, validation, upload progress, file management. Test with backend.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-10",
+    "milestones": [
+      "File picker created",
+      "Preview system",
+      "Upload progress",
+      "Backend tested"
+    ],
+    "id": "1cf2e746-d387-4dbe-89dc-c4d58666e194"
+  },
+  {
+    "title": "Web App - Checkout Form (v1.2.0)",
+    "details": "Create iOS-style checkout form, delivery/pickup toggle, address form with autofill, contact info, validation, auto-save draft.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-14",
+    "milestones": [
+      "Form UI built",
+      "Toggle implemented",
+      "Autofill working",
+      "Auto-save added"
+    ],
+    "id": "ca977706-3f0a-408f-9e42-e8ed1f7a6b3f"
+  },
+  {
+    "title": "Web App - Payment Integration (v1.2.0)",
+    "details": "Create payment method selector, integrate Stripe PaymentSheet web, SumUp flow, payment status tracking, failure handling.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-15",
+    "milestones": [
+      "Payment selector",
+      "Stripe integrated",
+      "SumUp flow",
+      "Error handling"
+    ],
+    "id": "7bbad88d-ae99-47dc-a339-882f4964be60"
+  },
+  {
+    "title": "Web App - Order Submission (v1.2.0)",
+    "details": "Create order submission flow, confirmation screen, order number + QR code, email confirmation, success/error states.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-16",
+    "milestones": [
+      "Submission flow",
+      "QR code display",
+      "Email trigger",
+      "States implemented"
+    ],
+    "id": "0d200b3b-8815-45cf-b47e-2ebcd2dc5826"
+  },
+  {
+    "title": "Web App - Order Details View (v1.2.0)",
+    "details": "Create order details page, status timeline, order items, invoice/delivery slip download, contact support, back navigation.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-17",
+    "milestones": [
+      "Details page",
+      "Timeline view",
+      "File downloads",
+      "Support button"
+    ],
+    "id": "c6a34551-8e79-4ce9-9f98-44bd29218cde"
+  },
+  {
+    "title": "Web App - Guest vs Login Flow (v1.3.0)",
+    "details": "Implement guest checkout, optional account creation, login/register screens, password reset, email verification, order history.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "medium",
+    "dueDate": "2026-03-21",
+    "milestones": [
+      "Guest flow",
+      "Login system",
+      "Password reset",
+      "Order history"
+    ],
+    "id": "4ee03531-4068-492d-9a75-2ebf2318705c"
+  },
+  {
+    "title": "Web App - User Profile (v1.3.0)",
+    "details": "Create profile screen, address management, contact info editing, notification preferences, order history in profile, iOS settings layout.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "medium",
+    "dueDate": "2026-03-22",
+    "milestones": [
+      "Profile screen",
+      "Address management",
+      "Preferences",
+      "iOS layout"
+    ],
+    "id": "55a773bc-c090-4e48-80cb-d5c050d206da"
+  },
+  {
+    "title": "Web App - Notifications (v1.3.0)",
+    "details": "Implement in-app notifications (iOS banners), email preferences, order status updates, push notifications (PWA), notification center.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "medium",
+    "dueDate": "2026-03-23",
+    "milestones": [
+      "In-app banners",
+      "Email prefs",
+      "Push notifications",
+      "Notification center"
+    ],
+    "id": "3cfd3a73-e3dd-4326-ad4d-6ab7c7539733"
+  },
+  {
+    "title": "Web App - Support & Help (v1.3.0)",
+    "details": "Create help/support screen, FAQ section, contact form, support phone number, FAQ accordion component.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "low",
+    "dueDate": "2026-03-24",
+    "milestones": [
+      "Help screen",
+      "FAQ section",
+      "Contact form",
+      "Phone click-to-call"
+    ],
+    "id": "a82e512b-8e82-4e38-9529-1e877ff2fb4c"
+  },
+  {
+    "title": "Web App - iOS-like Animations (v1.4.0)",
+    "details": "Add page transitions, button press feedback, loading skeletons, pull-to-refresh, modal animations. Ensure 60fps.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "medium",
+    "dueDate": "2026-03-28",
+    "milestones": [
+      "Transitions added",
+      "Feedback animations",
+      "Skeleton screens",
+      "60fps achieved"
+    ],
+    "id": "e66a88e9-4a9a-4bbf-8946-79718f8f6980"
+  },
+  {
+    "title": "Web App - Responsive Design (v1.4.0)",
+    "details": "Test on iPhone/iPad Safari, Android Chrome, desktop browsers. Fix all breakpoints. Ensure consistent experience.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-29",
+    "milestones": [
+      "iOS tested",
+      "Android tested",
+      "Desktop tested",
+      "Breakpoints fixed"
+    ],
+    "id": "fdb8bc14-44f2-43b9-ba13-ad58232ad44d"
+  },
+  {
+    "title": "Web App - Accessibility (v1.4.0)",
+    "details": "Add aria-labels, keyboard navigation, screen reader testing, color contrast, focus indicators. Test with VoiceOver/TalkBack.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "medium",
+    "dueDate": "2026-03-30",
+    "milestones": [
+      "Aria labels added",
+      "Keyboard nav",
+      "Screen reader tested",
+      "Contrast compliant"
+    ],
+    "id": "7c0aabfa-12d1-4105-a130-4f5e39867398"
+  },
+  {
+    "title": "Web App - Performance Optimization (v1.4.0)",
+    "details": "Implement code splitting, lazy loading images, service worker, caching, bundle optimization. Achieve 90+ Lighthouse.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-03-31",
+    "milestones": [
+      "Code splitting",
+      "Lazy loading",
+      "Service worker",
+      "90+ Lighthouse"
+    ],
+    "id": "f3985df6-1bb1-43cd-bae1-a2d4310cc352"
+  },
+  {
+    "title": "Web App - Staging Deployment (v1.5.0)",
+    "details": "Deploy to staging server, configure env vars, SSL/HTTPS, CORS, test all flows, create staging test account.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-04-01",
+    "milestones": [
+      "Staging deployed",
+      "SSL configured",
+      "CORS set",
+      "Test account created"
+    ],
+    "id": "fc5ff290-0cc9-4417-8fc7-01eb4cb1c667"
+  },
+  {
+    "title": "Web App - UAT Testing (v1.5.0)",
+    "details": "Create UAT plan, test all user flows end-to-end, payment flows (test mode), order submission, file uploads, document bugs.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-04-02",
+    "milestones": [
+      "UAT plan created",
+      "Flows tested",
+      "Payment tested",
+      "Bugs documented"
+    ],
+    "id": "bab4835a-38ba-48e3-9114-f91b727bfcb2"
+  },
+  {
+    "title": "Web App - Bug Fixes & Polish (v1.5.0)",
+    "details": "Fix critical & high bugs from UAT, polish UI, final performance review, final accessibility review.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2026-04-03",
+    "milestones": [
+      "Critical bugs fixed",
+      "UI polished",
+      "Performance optimized",
+      "Accessibility verified"
+    ],
+    "id": "2fee539c-420f-4481-ad83-c6ca4207ffac"
+  },
+  {
+    "title": "Web App - Production Launch (v1.5.0)",
+    "details": "Deploy to production, configure production env, set up monitoring (error tracking, analytics), launch checklist, monitor 24h.",
+    "type": "one-off",
+    "status": "todo",
+    "priority": "critical",
+    "dueDate": "2026-04-04",
+    "milestones": [
+      "Production deployed",
+      "Monitoring set",
+      "Launch checklist",
+      "24h monitoring"
+    ],
+    "id": "fd60172b-e1e3-42f4-a808-51918fc5e74f"
+  }
+]

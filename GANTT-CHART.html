@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copyshop Web App - Gantt Chart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .gantt-container {
+            overflow-x: auto;
+            padding: 30px;
+        }
+        
+        .gantt-chart {
+            min-width: 1200px;
+        }
+        
+        .phase {
+            margin-bottom: 30px;
+        }
+        
+        .phase-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .phase-info {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .task-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .task-row:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .task-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .task-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        
+        .task-due {
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+        
+        .task-bar-container {
+            flex: 2;
+            margin: 0 20px;
+            position: relative;
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .task-bar {
+            height: 100%;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: white;
+            font-size: 0.8em;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: all 0.3s;
+        }
+        
+        .task-bar:hover {
+            transform: scaleY(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .phase1 .task-bar { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .phase2 .task-bar { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .phase3 .task-bar { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .phase4 .task-bar { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .phase5 .task-bar { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .phase6 .task-bar { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+        
+        .task-meta {
+            text-align: right;
+            min-width: 100px;
+        }
+        
+        .priority {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .priority.critical { background: #ff4757; color: white; }
+        .priority.high { background: #ffa502; color: white; }
+        .priority.medium { background: #7bed9f; color: #2c3e50; }
+        .priority.low { background: #a4b0be; color: white; }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .legend-label {
+            font-size: 0.9em;
+            color: #2c3e50;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .phase1 .stat-value { color: #667eea; }
+        .phase2 .stat-value { color: #f093fb; }
+        .phase3 .stat-value { color: #4facfe; }
+        .phase4 .stat-value { color: #43e97b; }
+        .phase5 .stat-value { color: #fa709a; }
+        .phase6 .stat-value { color: #30cfd0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📱 Copyshop Web App Development</h1>
+            <p>High-Level Gantt Chart - March 1 to April 7, 2026</p>
+        </div>
+        
+        <div class="stats">
+            <div class="phase1 stat-card">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="phase2 stat-card">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Phases</div>
+            </div>
+            <div class="phase3 stat-card">
+                <div class="stat-value">38</div>
+                <div class="stat-label">Days</div>
+            </div>
+            <div class="phase4 stat-card">
+                <div class="stat-value">v1.5.0</div>
+                <div class="stat-label">Target Version</div>
+            </div>
+        </div>
+        
+        <div class="gantt-container">
+            <div class="gantt-chart">
+                
+                <!-- Phase 1 -->
+                <div class="phase phase1">
+                    <div class="phase-title">
+                        🏗️ Phase 1: Foundation & Setup (v1.0.0)
+                        <div class="phase-info">Mar 1-4, 2026 • Project initialization, design system, API layer</div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Project Initialization</div>
+                            <div class="task-due">Due: Mar 1, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Project Setup</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Design System Foundation</div>
+                            <div class="task-due">Due: Mar 2, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Design System</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - API Integration Layer</div>
+                            <div class="task-due">Due: Mar 3, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">API Integration</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Navigation & Routing</div>
+                            <div class="task-due">Due: Mar 4, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Navigation</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="phase phase2">
+                    <div class="phase-title">
+                        🎨 Phase 2: Core UI Components (v1.1.0)
+                        <div class="phase-info">Mar 7-10, 2026 • Dashboard, product selection, cart, uploads</div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Order Dashboard</div>
+                            <div class="task-due">Due: Mar 7, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Order Dashboard</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Product Selection</div>
+                            <div class="task-due">Due: Mar 8, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Product Picker</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Cart System</div>
+                            <div class="task-due">Due: Mar 9, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Cart System</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - File Upload System</div>
+                            <div class="task-due">Due: Mar 10, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">File Uploads</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="phase phase3">
+                    <div class="phase-title">
+                        💳 Phase 3: Checkout & Payment (v1.2.0)
+                        <div class="phase-info">Mar 14-17, 2026 • Forms, payments, order submission</div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Checkout Form</div>
+                            <div class="task-due">Due: Mar 14, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Checkout Form</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Payment Integration</div>
+                            <div class="task-due">Due: Mar 15, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Payment Integration</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Order Submission</div>
+                            <div class="task-due">Due: Mar 16, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Order Submission</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Order Details View</div>
+                            <div class="task-due">Due: Mar 17, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Order Details</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 4 -->
+                <div class="phase phase4">
+                    <div class="phase-title">
+                        👤 Phase 4: User Account & Features (v1.3.0)
+                        <div class="phase-info">Mar 21-24, 2026 • Login, profile, notifications, support</div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Guest vs Login Flow</div>
+                            <div class="task-due">Due: Mar 21, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Login System</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority medium">Medium</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - User Profile</div>
+                            <div class="task-due">Due: Mar 22, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">User Profile</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority medium">Medium</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Notifications</div>
+                            <div class="task-due">Due: Mar 23, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Notifications</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority medium">Medium</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Support & Help</div>
+                            <div class="task-due">Due: Mar 24, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Support System</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority low">Low</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 5 -->
+                <div class="phase phase5">
+                    <div class="phase-title">
+                        ✨ Phase 5: Polish & Testing (v1.4.0)
+                        <div class="phase-info">Mar 28-31, 2026 • Animations, responsive, accessibility, performance</div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - iOS-like Animations</div>
+                            <div class="task-due">Due: Mar 28, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Animations</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority medium">Medium</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Responsive Design</div>
+                            <div class="task-due">Due: Mar 29, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Responsive</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Accessibility</div>
+                            <div class="task-due">Due: Mar 30, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Accessibility</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority medium">Medium</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Performance Optimization</div>
+                            <div class="task-due">Due: Mar 31, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Performance</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 6 -->
+                <div class="phase phase6">
+                    <div class="phase-title">
+                        🚀 Phase 6: Deployment & Launch (v1.5.0)
+                        <div class="phase-info">Apr 1-7, 2026 • Staging, UAT, production launch</div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Staging Deployment</div>
+                            <div class="task-due">Due: Apr 1, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Staging Deploy</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - UAT Testing</div>
+                            <div class="task-due">Due: Apr 2, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">UAT Testing</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Bug Fixes & Polish</div>
+                            <div class="task-due">Due: Apr 3, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Bug Fixes</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority high">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-row">
+                        <div class="task-info">
+                            <div class="task-name">Web App - Production Launch</div>
+                            <div class="task-due">Due: Apr 4, 2026</div>
+                        </div>
+                        <div class="task-bar-container">
+                            <div class="task-bar">Launch! 🎉</div>
+                        </div>
+                        <div class="task-meta">
+                            <span class="priority critical">Critical</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                <span class="legend-label">Foundation (v1.0.0)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                <span class="legend-label">Core UI (v1.1.0)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                <span class="legend-label">Checkout (v1.2.0)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                <span class="legend-label">Account (v1.3.0)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                <span class="legend-label">Polish (v1.4.0)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+                <span class="legend-label">Launch (v1.5.0)</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

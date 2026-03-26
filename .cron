@@ -1,0 +1,5 @@
+# Cron job to run Mission Control automation every hour
+# Format: minute hour day month weekday command
+
+# Run automation every hour at minute 0
+0 * * * * /usr/bin/node /Users/jerome/.openclaw/workspace/mission-control/scripts/automation.js >> /Users/jerome/.openclaw/workspace/mission-control/logs/cron.log 2>&1

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "289bb3e6-5d60-4219-9d3c-d8e0d14ca563",
+    "build": "audit/copyshop-hardening-v0.1.2",
+    "tester": "Haris",
+    "device": "iPhone 16 Pro Max",
+    "result": "pass",
+    "notes": "Check of the German translation in the app."
+  },
+  {
+    "id": "9f8ba2a3-f5c6-454a-87d4-db7fda2c0f73",
+    "build": "audit/copyshop-hardening-v0.1.2",
+    "tester": "Haris",
+    "device": "iPhone 16Pro Max",
+    "result": "pass",
+    "notes": ""
+  }
+]
