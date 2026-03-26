@@ -1,14 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 type TaskType = "recurring" | "one-off" | "goal";
 type TaskStatus = "todo" | "in_progress" | "done" | "blocked";
 type TaskPriority = "low" | "high" | "critical";
 type TaskRunStatus = "ok" | "error" | "skipped";
-
-type SortKey = "dueDate" | "createdAt" | "type" | "priority";
-type SortDir = "asc" | "desc";
 
 type Task = {
   id: string;
@@ -24,8 +22,17 @@ type Task = {
   lastRunAt: string | null;
   lastRunStatus: TaskRunStatus | null;
   cronJobId: string | null;
+  project: string | null;
   createdAt: string;
   updatedAt: string;
+};
+
+type Project = {
+  id: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  status: string;
 };
 
 const priorityOrder: Record<TaskPriority, number> = { critical: 0, high: 1, low: 2 };
@@ -43,6 +50,7 @@ type TaskPayload = {
   lastRunAt?: string | null;
   lastRunStatus?: TaskRunStatus | null;
   cronJobId?: string | null;
+  project?: string | null;
 };
 
 const typeLabels: Record<TaskType, string> = {
@@ -104,7 +112,6 @@ function isDueToday(task: Task): boolean {
   if (!task.dueDate || task.status === "done") return false;
   const due = new Date(task.dueDate);
   if (Number.isNaN(due.getTime())) return false;
-
   const now = new Date();
   return (
     due.getFullYear() === now.getFullYear() &&
@@ -117,7 +124,6 @@ function isArchived(task: Task): boolean {
   if (task.status !== "done") return false;
   const updated = new Date(task.updatedAt);
   if (Number.isNaN(updated.getTime())) return false;
-
   const now = new Date();
   const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
   return updated < sevenDaysAgo;
@@ -125,135 +131,102 @@ function isArchived(task: Task): boolean {
 
 export default function TaskCenterPage() {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | "archived">("all");
-  const [search, setSearch] = useState("");
-  const [typeFilter, setTypeFilter] = useState<TaskType | "all">("all");
-  const [sortKey, setSortKey] = useState<SortKey>("dueDate");
-  const [sortDir, setSortDir] = useState<SortDir>("asc");
 
-  // Check URL query param for filter
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("filter") === "archived") {
-      setFilter("archived");
-    }
-  }, []);
+  // Project dropdown state
+  const [projectSearch, setProjectSearch] = useState("");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showProjectDropdown, setShowProjectDropdown] = useState(false);
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
+  const [creatingProject, setCreatingProject] = useState(false);
+  const projectDropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const preselectedProject = searchParams.get("project");
 
-  const refreshTasks = useCallback(async () => {
+  // Load tasks and projects
+  const refreshData = useCallback(async () => {
     try {
       setError(null);
-      const res = await fetch("/api/sqlite/tasks", { cache: "no-store" });
-      const json = (await res.json()) as Task[] | { error?: string };
+      const [tasksRes, projRes] = await Promise.all([
+        fetch("/api/sqlite/tasks", { cache: "no-store" }),
+        fetch("/api/sqlite/projects", { cache: "no-store" }),
+      ]);
+      const tasksData = (await tasksRes.json()) as Task[] | { error?: string };
+      const projData = (await projRes.json()) as Project[] | { error?: string };
 
-      if (!res.ok) {
-        const message = "error" in json && json.error ? json.error : "Failed to load tasks.";
-        throw new Error(message);
+      if (!tasksRes.ok) {
+        const msg = "error" in tasksData && tasksData.error ? tasksData.error : "Failed to load tasks.";
+        throw new Error(msg);
+      }
+      if (!projRes.ok) {
+        const msg = "error" in projData && projData.error ? projData.error : "Failed to load projects.";
+        throw new Error(msg);
       }
 
-      setTasks(Array.isArray(json) ? json : []);
+      setTasks(Array.isArray(tasksData) ? tasksData : []);
+      setProjects(Array.isArray(projData) ? projData : []);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to load tasks.");
+      setError(err instanceof Error ? err.message : "Failed to load data.");
     } finally {
       setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    void refreshTasks();
-  }, [refreshTasks]);
+    void refreshData();
+  }, [refreshData]);
 
-  const grouped = useMemo(
-    () => {
-      const activeTasks = tasks.filter((task) => !isArchived(task));
-      const archivedTasks = tasks.filter((task) => isArchived(task));
-      
-      if (filter === "archived") {
-        return {
-          recurring: [],
-          oneOff: [],
-          goal: [],
-          archived: archivedTasks,
-        };
+  // Pre-select project from URL param
+  useEffect(() => {
+    if (preselectedProject && projects.length > 0) {
+      const found = projects.find((p) => p.slug === preselectedProject);
+      if (found) {
+        setSelectedProject(found);
+        setProjectSearch(found.name);
       }
-      
-      return {
-        recurring: activeTasks.filter((task) => task.type === "recurring"),
-        oneOff: activeTasks.filter((task) => task.type === "one-off"),
-        goal: activeTasks.filter((task) => task.type === "goal"),
-        archived: archivedTasks,
-      };
-    },
-    [tasks, filter]
-  );
-
-  const isFilterActive = search.trim() !== "" || typeFilter !== "all" || sortKey !== "dueDate" || sortDir !== "asc";
-
-  const applyFilters = useCallback((list: Task[]): Task[] => {
-    let result = list;
-
-    // Type/project filter
-    if (typeFilter !== "all") {
-      result = result.filter((t) => t.type === typeFilter);
     }
+  }, [preselectedProject, projects]);
 
-    // Search filter (title + details)
-    if (search.trim()) {
-      const q = search.trim().toLowerCase();
-      result = result.filter(
-        (t) =>
-          t.title.toLowerCase().includes(q) ||
-          (t.details && t.details.toLowerCase().includes(q))
-      );
+  // Filter project dropdown
+  useEffect(() => {
+    if (!projectSearch.trim()) {
+      setFilteredProjects(projects);
+    } else {
+      const q = projectSearch.toLowerCase();
+      setFilteredProjects(projects.filter((p) => p.name.toLowerCase().includes(q)));
     }
+  }, [projectSearch, projects]);
 
-    // Sort
-    result = [...result].sort((a, b) => {
-      let cmp = 0;
-      if (sortKey === "dueDate") {
-        const aD = a.dueDate ?? "9999";
-        const bD = b.dueDate ?? "9999";
-        cmp = aD.localeCompare(bD);
-      } else if (sortKey === "createdAt") {
-        cmp = a.createdAt.localeCompare(b.createdAt);
-      } else if (sortKey === "type") {
-        cmp = a.type.localeCompare(b.type);
-      } else if (sortKey === "priority") {
-        cmp = priorityOrder[a.priority] - priorityOrder[b.priority];
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (projectDropdownRef.current && !projectDropdownRef.current.contains(e.target as Node)) {
+        setShowProjectDropdown(false);
       }
-      return sortDir === "asc" ? cmp : -cmp;
-    });
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
 
-    return result;
-  }, [search, typeFilter, sortKey, sortDir]);
-
-  const filteredGrouped = useMemo(() => ({
-    recurring: applyFilters(grouped.recurring),
-    oneOff: applyFilters(grouped.oneOff),
-    goal: applyFilters(grouped.goal),
-    archived: applyFilters(grouped.archived),
-  }), [grouped, applyFilters]);
-
-  const totalFiltered = useMemo(
-    () =>
-      filteredGrouped.recurring.length +
-      filteredGrouped.oneOff.length +
-      filteredGrouped.goal.length +
-      (filter === "archived" ? filteredGrouped.archived.length : 0),
-    [filteredGrouped, filter]
-  );
-
-  const totalAll = useMemo(
-    () =>
-      grouped.recurring.length +
-      grouped.oneOff.length +
-      grouped.goal.length +
-      (filter === "archived" ? grouped.archived.length : 0),
-    [grouped, filter]
-  );
+  const grouped = useMemo(() => {
+    const activeTasks = tasks.filter((task) => !isArchived(task));
+    const archivedTasks = tasks.filter((task) => isArchived(task));
+    if (filter === "archived") {
+      return { recurring: [], oneOff: [], goal: [], archived: archivedTasks };
+    }
+    return {
+      recurring: activeTasks.filter((task) => task.type === "recurring"),
+      oneOff: activeTasks.filter((task) => task.type === "one-off"),
+      goal: activeTasks.filter((task) => task.type === "goal"),
+      archived: archivedTasks,
+    };
+  }, [tasks, filter]);
 
   const priorityOverview = useMemo(
     () => ({
@@ -270,6 +243,32 @@ export default function TaskCenterPage() {
     const goalsOpen = tasks.filter((task) => task.type === "goal" && task.status !== "done").length;
     return { open, dueToday, goalsOpen };
   }, [tasks]);
+
+  // Inline create new project
+  const handleCreateProjectInline = async () => {
+    const name = projectSearch.trim();
+    if (!name) return;
+    setCreatingProject(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/sqlite/projects", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name }),
+      });
+      const json = (await res.json()) as any;
+      if (!res.ok) throw new Error(json?.error || "Failed to create project");
+      const newProject: Project = json;
+      setProjects((prev) => [...prev, newProject]);
+      setSelectedProject(newProject);
+      setShowProjectDropdown(false);
+      setProjectSearch(newProject.name);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to create project");
+    } finally {
+      setCreatingProject(false);
+    }
+  };
 
   const handleCreateTask = async () => {
     if (!form.title.trim()) {
@@ -289,11 +288,9 @@ export default function TaskCenterPage() {
       schedule: form.type === "recurring" ? form.schedule.trim() || null : null,
       milestones:
         form.type === "goal"
-          ? form.milestones
-              .split("\n")
-              .map((entry) => entry.trim())
-              .filter((entry) => entry.length > 0)
+          ? form.milestones.split("\n").map((e) => e.trim()).filter(Boolean)
           : [],
+      project: selectedProject?.slug ?? null,
     };
 
     try {
@@ -311,7 +308,14 @@ export default function TaskCenterPage() {
       }
 
       setForm(initialForm);
-      await refreshTasks();
+      setSelectedProject(null);
+      setProjectSearch("");
+      await refreshData();
+
+      // Redirect to project page if a project was selected
+      if (selectedProject) {
+        router.push(`/projects/${selectedProject.slug}`);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not create task.");
     } finally {
@@ -334,7 +338,7 @@ export default function TaskCenterPage() {
         throw new Error(message);
       }
 
-      await refreshTasks();
+      await refreshData();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not update task.");
     }
@@ -348,8 +352,7 @@ export default function TaskCenterPage() {
         const json = (await res.json()) as { error?: string };
         throw new Error(json.error ?? "Could not delete task.");
       }
-
-      await refreshTasks();
+      await refreshData();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not delete task.");
     }
@@ -391,6 +394,12 @@ export default function TaskCenterPage() {
     });
   };
 
+  const projectMap = useMemo(() => {
+    const map: Record<string, Project> = {};
+    for (const p of projects) map[p.slug] = p;
+    return map;
+  }, [projects]);
+
   const renderTaskList = (title: string, list: Task[]) => (
     <section className="surface p-5">
       <div className="flex items-center justify-between">
@@ -423,6 +432,15 @@ export default function TaskCenterPage() {
               </div>
 
               {task.details ? <p className="mt-2 text-sm text-black/70">{task.details}</p> : null}
+
+              {task.project && projectMap[task.project] && (
+                <button
+                  onClick={() => router.push(`/projects/${task.project}`)}
+                  className="mt-2 inline-flex items-center gap-1 rounded-full bg-violet-50 border border-violet-100 px-2.5 py-0.5 text-xs text-violet-700 hover:bg-violet-100 transition"
+                >
+                  {projectMap[task.project].name}
+                </button>
+              )}
 
               <div className="mt-3 grid gap-2 text-xs text-black/60 md:grid-cols-2">
                 <p>Due: {task.dueDate ? formatDate(task.dueDate) : "-"}</p>
@@ -474,6 +492,9 @@ export default function TaskCenterPage() {
       )}
     </section>
   );
+
+  const exactMatch = filteredProjects.some((p) => p.name.toLowerCase() === projectSearch.toLowerCase().trim());
+  const showCreateOption = projectSearch.trim() && !exactMatch;
 
   return (
     <div className="space-y-4">
@@ -528,6 +549,68 @@ export default function TaskCenterPage() {
             value={form.title}
             onChange={(e) => setForm((prev) => ({ ...prev, title: e.target.value }))}
           />
+
+          {/* Project dropdown */}
+          <div className="relative md:col-span-2" ref={projectDropdownRef}>
+            <label className="kicker mb-1 block">Project (optional)</label>
+            {selectedProject ? (
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    setSelectedProject(null);
+                    setProjectSearch("");
+                  }}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-violet-50 border border-violet-100 px-3 py-1.5 text-sm text-violet-700 hover:bg-violet-100 transition"
+                >
+                  {selectedProject.name}
+                  <span className="text-violet-400 hover:text-violet-700">×</span>
+                </button>
+              </div>
+            ) : (
+              <>
+                <input
+                  className="input w-full"
+                  placeholder="Search or create project…"
+                  value={projectSearch}
+                  onChange={(e) => {
+                    setProjectSearch(e.target.value);
+                    setShowProjectDropdown(true);
+                  }}
+                  onFocus={() => setShowProjectDropdown(true)}
+                  autoComplete="off"
+                />
+                {showProjectDropdown && (
+                  <div className="absolute z-50 mt-1 w-full rounded-xl border border-black/10 bg-white shadow-lg max-h-60 overflow-y-auto">
+                    {filteredProjects.slice(0, 8).map((p) => (
+                      <button
+                        key={p.id}
+                        className="w-full px-4 py-2.5 text-left text-sm hover:bg-zinc-50 transition"
+                        onClick={() => {
+                          setSelectedProject(p);
+                          setProjectSearch(p.name);
+                          setShowProjectDropdown(false);
+                        }}
+                      >
+                        {p.name}
+                      </button>
+                    ))}
+                    {showCreateOption && (
+                      <button
+                        className="w-full px-4 py-2.5 text-left text-sm border-t border-black/5 text-violet-700 hover:bg-violet-50 font-medium transition"
+                        onClick={() => void handleCreateProjectInline()}
+                        disabled={creatingProject}
+                      >
+                        {creatingProject ? "Creating…" : `Create "${projectSearch.trim()}" as new project`}
+                      </button>
+                    )}
+                    {filteredProjects.length === 0 && !showCreateOption && (
+                      <p className="px-4 py-2.5 text-sm text-black/40">No projects yet.</p>
+                    )}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
 
           <select
             className="input"
@@ -584,16 +667,16 @@ export default function TaskCenterPage() {
 
         <div className="mt-4 flex items-center gap-2">
           <button className="btn-primary" onClick={() => void handleCreateTask()} disabled={saving}>
-            {saving ? "Saving..." : "Add task"}
+            {saving ? "Saving…" : "Add task"}
           </button>
           <button
-            onClick={() => setForm(initialForm)}
+            onClick={() => { setForm(initialForm); setSelectedProject(null); setProjectSearch(""); }}
             className="rounded-xl border border-black/10 px-4 py-2 text-sm text-black/70"
           >
             Reset
           </button>
           <button
-            onClick={() => void refreshTasks()}
+            onClick={() => void refreshData()}
             className="rounded-xl border border-black/10 px-4 py-2 text-sm text-black/70"
           >
             Refresh
@@ -604,96 +687,9 @@ export default function TaskCenterPage() {
       </section>
 
       {loading ? (
-        <p className="text-sm text-black/55">Loading tasks...</p>
+        <p className="text-sm text-black/55">Loading tasks…</p>
       ) : (
-        <>
-          {/* Filter / Sort Bar */}
-          <section className="surface p-4 space-y-3">
-            <div className="flex flex-wrap items-center gap-2">
-              {/* Search */}
-              <div className="relative flex-1 min-w-48">
-                <input
-                  className="input pl-8 w-full"
-                  placeholder="Search tasks..."
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-                <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-black/35 text-sm">🔍</span>
-                {search && (
-                  <button
-                    onClick={() => setSearch("")}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-black/35 hover:text-black/70"
-                  >
-                    ✕
-                  </button>
-                )}
-              </div>
-
-              {/* Project / Type filter */}
-              <div className="flex items-center gap-1">
-                {(["all", "recurring", "one-off", "goal"] as const).map((t) => (
-                  <button
-                    key={t}
-                    onClick={() => setTypeFilter(t)}
-                    className={`rounded-lg border px-2.5 py-1.5 text-xs font-medium transition ${
-                      typeFilter === t
-                        ? "border-black bg-black text-white"
-                        : "border-black/10 bg-white text-black/60 hover:border-black/25"
-                    }`}
-                  >
-                    {t === "all" ? "All types" : typeLabels[t]}
-                  </button>
-                ))}
-              </div>
-
-              {/* Sort controls */}
-              <div className="flex items-center gap-1.5">
-                <span className="text-xs text-black/40">Sort:</span>
-                <select
-                  className="input py-1.5 text-xs"
-                  value={sortKey}
-                  onChange={(e) => setSortKey(e.target.value as SortKey)}
-                >
-                  <option value="dueDate">Due date</option>
-                  <option value="createdAt">Created</option>
-                  <option value="type">Type</option>
-                  <option value="priority">Priority</option>
-                </select>
-                <button
-                  onClick={() => setSortDir((d) => (d === "asc" ? "desc" : "asc"))}
-                  className="rounded-lg border border-black/10 bg-white px-2 py-1.5 text-xs text-black/60 hover:border-black/25"
-                  title={sortDir === "asc" ? "Ascending" : "Descending"}
-                >
-                  {sortDir === "asc" ? "↑" : "↓"}
-                </button>
-
-                {/* Clear filters */}
-                {isFilterActive && (
-                  <button
-                    onClick={() => {
-                      setSearch("");
-                      setTypeFilter("all");
-                      setSortKey("dueDate");
-                      setSortDir("asc");
-                    }}
-                    className="rounded-lg border border-rose-200 bg-rose-50 px-2.5 py-1.5 text-xs text-rose-700 hover:bg-rose-100 transition"
-                  >
-                    Clear filters
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* Task count */}
-            {isFilterActive && (
-              <p className="text-xs text-black/50">
-                Showing <span className="font-medium text-black/70">{totalFiltered}</span> of{" "}
-                <span className="font-medium text-black/70">{totalAll}</span> tasks
-              </p>
-            )}
-          </section>
-
-          <div className="grid gap-4">
+        <div className="grid gap-4">
           {filter === "archived" && (
             <button
               onClick={() => setFilter("all")}
@@ -702,9 +698,9 @@ export default function TaskCenterPage() {
               ← Back to Active Tasks
             </button>
           )}
-          {renderTaskList("Recurring", filteredGrouped.recurring)}
-          {renderTaskList("One-off", filteredGrouped.oneOff)}
-          {renderTaskList("Long-term goals", filteredGrouped.goal)}
+          {renderTaskList("Recurring", grouped.recurring)}
+          {renderTaskList("One-off", grouped.oneOff)}
+          {renderTaskList("Long-term goals", grouped.goal)}
           {filter === "all" && grouped.archived.length > 0 && (
             <button
               onClick={() => setFilter("archived")}
@@ -713,9 +709,8 @@ export default function TaskCenterPage() {
               <span className="text-sm text-zinc-500">View {grouped.archived.length} archived tasks →</span>
             </button>
           )}
-          {filter === "archived" && renderTaskList("Archived (done > 7 days)", filteredGrouped.archived)}
+          {filter === "archived" && renderTaskList("Archived (done > 7 days)", grouped.archived)}
         </div>
-        </>
       )}
     </div>
   );

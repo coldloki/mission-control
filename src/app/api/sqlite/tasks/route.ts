@@ -21,6 +21,7 @@ type DbTaskRow = {
   cron_job_id: string | null;
   created_at: string | null;
   updated_at: string | null;
+  project: string | null;
 };
 
 function normalizeMilestones(value: string | null): string[] {
@@ -88,6 +89,7 @@ function mapRow(row: DbTaskRow) {
     cronJobId: row.cron_job_id,
     createdAt: row.created_at ?? new Date().toISOString(),
     updatedAt: row.updated_at ?? new Date().toISOString(),
+    project: row.project ?? null,
   };
 }
 
@@ -132,11 +134,12 @@ export async function POST(req: Request): Promise<NextResponse> {
     const schedule = payload.schedule ? String(payload.schedule) : null;
     const milestones = JSON.stringify(Array.isArray(payload.milestones) ? payload.milestones : []);
     const automationPrompt = payload.automationPrompt ? String(payload.automationPrompt) : null;
+    const project = payload.project ? String(payload.project) : null;
 
     await run(
-      `INSERT INTO tasks (id, title, details, type, status, priority, due_date, schedule, milestones, automation_prompt)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [id, title, details, type, status, priority, dueDate, schedule, milestones, automationPrompt]
+      `INSERT INTO tasks (id, title, details, type, status, priority, due_date, schedule, milestones, automation_prompt, project)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [id, title, details, type, status, priority, dueDate, schedule, milestones, automationPrompt, project]
     );
 
     return NextResponse.json({ ok: true, id });
