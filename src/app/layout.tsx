@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { MobileNav } from "@/components/MobileNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <h1 className="text-xl font-semibold tracking-tight">Mission Control</h1>
                 <p className="text-xs text-black/50">Copyshop workflow cockpit</p>
               </div>
-              <nav className="flex flex-wrap gap-1.5 rounded-2xl border border-black/5 bg-black/[0.03] p-1">
+              <nav className="hidden md:flex flex-wrap gap-1.5 rounded-2xl border border-black/5 bg-black/[0.03] p-1">
                 {nav.map((item) => (
                   <Link
                     key={item.href}
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   </Link>
                 ))}
               </nav>
+              <MobileNav nav={nav} />
             </div>
           </header>
           <main className="mx-auto max-w-6xl px-5 py-8 md:px-6">{children}</main>
