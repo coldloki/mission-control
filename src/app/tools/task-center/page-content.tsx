@@ -554,7 +554,7 @@ function TaskCenterContent() {
         </p>
       </div>
 
-      <section className="grid gap-3 md:grid-cols-3">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div className="surface p-4">
           <p className="kicker">Open tasks</p>
           <p className="mt-2 text-2xl font-semibold text-black">{stats.open}</p>
@@ -569,7 +569,7 @@ function TaskCenterContent() {
         </div>
       </section>
 
-      <section className="grid gap-3 md:grid-cols-3">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div className="surface p-4">
           <p className="kicker">Critical</p>
           <p className="mt-2 text-2xl font-semibold text-rose-700">{priorityOverview.critical}</p>
@@ -590,9 +590,9 @@ function TaskCenterContent() {
           Use recurring for daily routines, one-off for today, and goal for long-term outcomes.
         </p>
 
-        <div className="mt-4 grid gap-3 md:grid-cols-2">
+        <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
           <input
-            className="input md:col-span-2"
+            className="input w-full md:col-span-2"
             placeholder="Task title"
             value={form.title}
             onChange={(e) => setForm((prev) => ({ ...prev, title: e.target.value }))}
