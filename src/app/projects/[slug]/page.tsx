@@ -230,7 +230,7 @@ export default function ProjectDetailPage() {
   const doneTasks = tasks.filter((t) => t.status === "done");
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-24">
       {/* Back */}
       <button
         onClick={() => router.push("/projects")}
