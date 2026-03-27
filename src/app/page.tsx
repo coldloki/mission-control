@@ -131,38 +131,30 @@ export default function MissionControlHome() {
   const doneTasks = tasks.filter((t) => t.status === "done").length;
 
   return (
-    <div className="min-h-screen bg-gray-50 -mx-5 -my-8 md:-mx-6">
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">📋 Mission Control</h1>
-              <p className="text-sm text-gray-500 mt-1">Summary</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <Link
-                href="/tools/task-center"
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium"
-              >
-                Open Task Center
-              </Link>
-            </div>
-          </div>
+    <div className="space-y-6">
+      <div className="surface p-5 flex items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-black">📋 Mission Control</h1>
+          <p className="text-sm text-black/50 mt-0.5">Summary & Overview</p>
         </div>
-      </header>
+        <div className="flex items-center gap-2 shrink-0">
+          <Link href="/projects" className="btn-primary text-sm">Projects</Link>
+          <Link href="/tools/task-center" className="btn-primary text-sm">Task Center</Link>
+        </div>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div>
         {/* Summary strip */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <div className="bg-white rounded-lg shadow p-4 border border-gray-100">
+          <div className="surface p-4">
             <div className="text-2xl font-bold text-gray-900">{totalTasks}</div>
             <div className="text-sm text-gray-500">Total Tasks</div>
           </div>
-          <div className="bg-white rounded-lg shadow p-4 border border-gray-100">
+          <div className="surface p-4">
             <div className="text-2xl font-bold text-emerald-600">{doneTasks}</div>
             <div className="text-sm text-gray-500">Completed</div>
           </div>
-          <div className="bg-white rounded-lg shadow p-4 border border-gray-100">
+          <div className="surface p-4">
             <div className="text-2xl font-bold text-blue-600">{totalTasks - doneTasks}</div>
             <div className="text-sm text-gray-500">Open</div>
           </div>
