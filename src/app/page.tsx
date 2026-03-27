@@ -137,7 +137,7 @@ export default function MissionControlHome() {
           <h1 className="text-2xl font-bold text-black">📋 Mission Control</h1>
           <p className="text-sm text-black/50 mt-0.5">Summary & Overview</p>
         </div>
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex flex-wrap items-center gap-2">
           <Link href="/projects" className="btn-primary text-sm">Projects</Link>
           <Link href="/tools/task-center" className="btn-primary text-sm">Task Center</Link>
         </div>
@@ -187,7 +187,7 @@ export default function MissionControlHome() {
                     {urgent ? (
                       <div className="mt-1 text-xs text-black/55">
                         <span className="text-rose-600 font-medium">Due soon: </span>
-                        <span className="text-black/70">{urgent.title}</span>
+                        <span className="text-black/70 break-words">{urgent.title}</span>
                         <span className="ml-1 text-black/40">({formatDate(urgent.dueDate)})</span>
                       </div>
                     ) : open > 0 ? (
@@ -220,7 +220,7 @@ export default function MissionControlHome() {
                       <span className="text-xs text-black/45 capitalize">{task.type}</span>
                     </div>
                   </div>
-                  <div className="shrink-0 text-right">
+                  <div className="shrink-0 text-left sm:text-right">
                     <p className="text-xs font-medium text-rose-600">{formatDate(task.dueDate)}</p>
                     <p className="text-xs text-black/40 capitalize">{task.priority}</p>
                   </div>
@@ -231,7 +231,7 @@ export default function MissionControlHome() {
         )}
 
         {/* Data source + quick actions */}
-        <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-6">
+        <div className="surface p-4 mb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-emerald-600 text-lg">✅</span>
@@ -243,7 +243,7 @@ export default function MissionControlHome() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
+        <div className="surface p-5">
           <h2 className="text-lg font-semibold text-gray-900">Quick Actions</h2>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href="/tools/task-center" className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-800 transition">
