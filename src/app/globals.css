@@ -16,6 +16,7 @@
 }
 
 body {
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.9), transparent 30%),
     radial-gradient(circle at 90% 10%, rgba(224, 231, 255, 0.6), transparent 28%),
@@ -25,7 +26,7 @@ body {
 }
 
 .surface {
-  @apply rounded-2xl border border-black/5 bg-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur;
+  @apply rounded-2xl border border-black/5 bg-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur overflow-hidden;
 }
 
 .kicker {
