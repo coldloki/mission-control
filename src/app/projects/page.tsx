@@ -248,7 +248,7 @@ export default function ProjectsPage() {
   );
 
   return (
-    <div>
+    <div className="pb-24">
       <header className="mb-8 flex items-start justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Projects</h1>

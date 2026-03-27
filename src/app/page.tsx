@@ -131,7 +131,7 @@ export default function MissionControlHome() {
   const doneTasks = tasks.filter((t) => t.status === "done").length;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-24">
       <div className="surface p-5 flex items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-black">📋 Mission Control</h1>

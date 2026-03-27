@@ -546,7 +546,7 @@ function TaskCenterContent() {
   const showCreateOption = projectSearch.trim() && !exactMatch;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 pb-24">
       <div>
         <p className="kicker">Tool</p>
         <h2 className="title-xl mt-1">Task Center</h2>
