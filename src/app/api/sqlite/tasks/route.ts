@@ -147,3 +147,36 @@ export async function POST(req: Request): Promise<NextResponse> {
     return NextResponse.json({ error: err?.message || "Failed to create task." }, { status: 500 });
   }
 }
+
+export async function PATCH(req: Request): Promise<NextResponse> {
+  try {
+    const payload = (await req.json()) as any;
+    const id = payload.id;
+    if (!id) return NextResponse.json({ error: "Task ID is required." }, { status: 400 });
+
+    const allowed = ["title", "details", "type", "status", "priority", "dueDate", "schedule", "milestones", "automationPrompt", "project"];
+    const updates: string[] = [];
+    const values: any[] = [];
+
+    for (const key of allowed) {
+      if (key in payload) {
+        const dbKey = key.replace(/([A-Z])/g, "_$1").toLowerCase();
+        updates.push(`${dbKey} = ?`);
+        if (key === "milestones") {
+          values.push(JSON.stringify(Array.isArray(payload.milestones) ? payload.milestones : []));
+        } else {
+          values.push(payload[key] === null ? null : String(payload[key]));
+        }
+      }
+    }
+
+    if (updates.length === 0) {
+      return NextResponse.json({ error: "No supported fields to update." }, { status: 400 });
+    }
+
+    await run(`UPDATE tasks SET ${updates.join(", ")} WHERE id = ?`, [...values, id]);
+    return NextResponse.json({ ok: true });
+  } catch (err: any) {
+    return NextResponse.json({ error: err?.message || "Failed to update task." }, { status: 500 });
+  }
+}

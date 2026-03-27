@@ -166,7 +166,7 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {projects.map((project) => {
             const status = statusConfig[project.status] ?? { label: project.status, className: "bg-zinc-100 text-zinc-700" };
-            const services = project.services ? JSON.parse(project.services) : [];
+            const services = project.services ? project.services.split(",").map(s => s.trim()).filter(Boolean) : [];
             return (
               <div
                 key={project.id}

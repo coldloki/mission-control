@@ -59,6 +59,8 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
       fields.push({ key: "milestones", sql: "milestones = ?", value: normalizeMilestonesToDb(payload.milestones) });
     if (payload.automationPrompt !== undefined)
       fields.push({ key: "automation_prompt", sql: "automation_prompt = ?", value: payload.automationPrompt ? String(payload.automationPrompt) : null });
+    if (payload.project !== undefined)
+      fields.push({ key: "project", sql: "project = ?", value: payload.project ? String(payload.project) : null });
 
     if (fields.length === 0) {
       return NextResponse.json({ error: "No supported fields to update." }, { status: 400 });

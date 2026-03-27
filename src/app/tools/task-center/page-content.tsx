@@ -145,6 +145,8 @@ function TaskCenterContent() {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [creatingProject, setCreatingProject] = useState(false);
   const projectDropdownRef = useRef<HTMLDivElement>(null);
+  const [assigningProjectFor, setAssigningProjectFor] = useState<string | null>(null);
+  const [assignProjectSearch, setAssignProjectSearch] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
   const preselectedProject = searchParams.get("project");
@@ -433,13 +435,59 @@ function TaskCenterContent() {
 
               {task.details ? <p className="mt-2 text-sm text-black/70">{task.details}</p> : null}
 
-              {task.project && projectMap[task.project] && (
+              {task.project && projectMap[task.project] ? (
                 <button
                   onClick={() => router.push(`/projects/${task.project}`)}
                   className="mt-2 inline-flex items-center gap-1 rounded-full bg-violet-50 border border-violet-100 px-2.5 py-0.5 text-xs text-violet-700 hover:bg-violet-100 transition"
                 >
                   {projectMap[task.project].name}
                 </button>
+              ) : (
+                <button
+                  onClick={() => { setAssigningProjectFor(task.id); setAssignProjectSearch(""); }}
+                  className="mt-2 inline-flex items-center gap-1 rounded-full bg-zinc-100 border border-zinc-200 px-2.5 py-0.5 text-xs text-zinc-500 hover:bg-zinc-200 transition"
+                >
+                  + Assign project
+                </button>
+              )}
+
+              {assigningProjectFor === task.id && (
+                <div className="mt-2 rounded-xl border border-black/10 bg-white shadow-lg overflow-hidden">
+                  <div className="p-2 border-b border-black/5">
+                    <input
+                      autoFocus
+                      className="input w-full text-xs py-1"
+                      placeholder="Search projects..."
+                      value={assignProjectSearch}
+                      onChange={(e) => setAssignProjectSearch(e.target.value)}
+                    />
+                  </div>
+                  <div className="max-h-40 overflow-y-auto">
+                    {(projects.filter(p => !assignProjectSearch || p.name.toLowerCase().includes(assignProjectSearch.toLowerCase()))).slice(0, 8).map(p => (
+                      <button
+                        key={p.id}
+                        onClick={() => { void updateTask(task.id, { project: p.slug }); setAssigningProjectFor(null); }}
+                        className="w-full px-3 py-2 text-left text-xs hover:bg-zinc-50 transition"
+                      >
+                        {p.name}
+                      </button>
+                    ))}
+                    {assignProjectSearch && !projects.some(p => p.name.toLowerCase() === assignProjectSearch.toLowerCase()) && (
+                      <button
+                        onClick={() => { void handleCreateProjectInline(); setAssigningProjectFor(null); }}
+                        className="w-full px-3 py-2 text-left text-xs text-violet-700 hover:bg-violet-50 font-medium"
+                      >
+                        Create "{assignProjectSearch.trim()}"
+                      </button>
+                    )}
+                    <button
+                      onClick={() => setAssigningProjectFor(null)}
+                      className="w-full px-3 py-2 text-left text-xs text-black/40 hover:bg-zinc-50 border-t border-black/5"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
               )}
 
               <div className="mt-3 grid gap-2 text-xs text-black/60 md:grid-cols-2">

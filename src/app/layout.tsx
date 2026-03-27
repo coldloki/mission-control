@@ -20,7 +20,7 @@ const nav = [
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="overflow-x-hidden">
         <div className="min-h-screen">
           <header className="sticky top-0 z-20 border-b border-black/5 bg-white/80 backdrop-blur-xl">
             <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-4 md:px-6">

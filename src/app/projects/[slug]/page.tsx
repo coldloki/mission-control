@@ -225,7 +225,7 @@ export default function ProjectDetailPage() {
   }
 
   const projectStatus = statusConfig[project.status] ?? { label: project.status, className: "bg-zinc-100 text-zinc-700" };
-  const services: string[] = project.services ? JSON.parse(project.services) : [];
+  const services: string[] = project.services ? project.services.split(",").map((s: string) => s.trim()).filter(Boolean) : [];
   const openTasks = tasks.filter((t) => t.status !== "done");
   const doneTasks = tasks.filter((t) => t.status === "done");
 
