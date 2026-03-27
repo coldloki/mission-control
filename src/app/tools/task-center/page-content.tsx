@@ -437,10 +437,11 @@ function TaskCenterContent() {
 
               {task.project && projectMap[task.project] ? (
                 <button
-                  onClick={() => router.push(`/projects/${task.project}`)}
-                  className="mt-2 inline-flex items-center gap-1 rounded-full bg-violet-50 border border-violet-100 px-2.5 py-0.5 text-xs text-violet-700 hover:bg-violet-100 transition"
+                  onClick={() => { if (task.project) { setAssigningProjectFor(task.id); setAssignProjectSearch(projectMap[task.project]?.name ?? ''); } }}
+                  className="mt-2 inline-flex items-center gap-1 rounded-full bg-violet-50 border border-violet-100 px-2.5 py-0.5 text-xs text-violet-700 hover:bg-violet-100 transition cursor-pointer"
+                  title="Click to reassign project"
                 >
-                  {projectMap[task.project].name}
+                  {projectMap[task.project].name} ↗
                 </button>
               ) : (
                 <button
