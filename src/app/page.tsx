@@ -170,30 +170,30 @@ export default function MissionControlHome() {
                 return (
                   <div
                     key={project.id}
-                    className="surface hover:shadow-md transition-shadow cursor-pointer"
+                    className="surface p-4 flex flex-col gap-2 hover:shadow-md transition-shadow cursor-pointer"
                     onClick={() => router.push(`/projects/${project.slug}`)}
                   >
-                    <div className="flex items-start justify-between gap-2 mb-2">
-                      <h3 className="text-sm font-semibold text-black leading-tight">{project.name}</h3>
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="text-sm font-semibold text-black">{project.name}</h3>
                       <span className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded-full ${status.className}`}>
                         {status.label}
                       </span>
                     </div>
-                    <div className="flex items-center gap-3 text-xs text-black/55 mb-2">
+                    <div className="flex items-center gap-3 text-xs text-black/55">
                       <span className="font-medium text-emerald-700">{done} done</span>
                       <span>·</span>
                       <span className="font-medium text-blue-700">{open} open</span>
                     </div>
                     {urgent ? (
-                      <div className="mt-1 text-xs text-black/55">
+                      <div className="text-xs text-black/55">
                         <span className="text-rose-600 font-medium">Due soon: </span>
-                        <span className="text-black/70 break-words">{urgent.title}</span>
+                        <span className="text-black/70">{urgent.title}</span>
                         <span className="ml-1 text-black/40">({formatDate(urgent.dueDate)})</span>
                       </div>
                     ) : open > 0 ? (
-                      <p className="mt-1 text-xs text-black/40">No due date set</p>
+                      <p className="text-xs text-black/40">No due date set</p>
                     ) : (
-                      <p className="mt-1 text-xs text-black/40">All tasks done</p>
+                      <p className="text-xs text-black/40">All tasks done</p>
                     )}
                   </div>
                 );
@@ -210,7 +210,7 @@ export default function MissionControlHome() {
               {dueSoon.map((task) => (
                 <div key={task.id} className="surface p-4 flex items-start justify-between gap-3">
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-black truncate">{task.title}</p>
+                    <p className="text-sm font-semibold text-black break-words">{task.title}</p>
                     <div className="flex items-center gap-2 mt-1 flex-wrap">
                       {task.projectName ? (
                         <span className="text-xs bg-violet-50 text-violet-700 border border-violet-100 px-2 py-0.5 rounded-full">

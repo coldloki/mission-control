@@ -26,7 +26,7 @@ body {
 }
 
 .surface {
-  @apply rounded-2xl border border-black/5 bg-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur overflow-hidden;
+  @apply rounded-2xl border border-black/5 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)];
 }
 
 .kicker {
